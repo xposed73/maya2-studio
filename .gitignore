@@ -1,0 +1,15 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local cache & saved voice profiles
+.maya2_cache/
+.maya2_voices/
+.pytest_cache/

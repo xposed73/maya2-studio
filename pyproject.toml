@@ -1,0 +1,26 @@
+[project]
+name = "maya2-studio"
+version = "0.1.0"
+description = "Gradio studio for testing and generating speech with Maya 2, including local Apple Silicon MLX inference, voice cloning, and voice design."
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "gradio>=6.0,<7.0",
+    "gradio-client>=1.10",
+    "httpx>=0.28",
+    "maya-mac @ https://huggingface.co/justanurag/maya-mac/resolve/main/dist/maya_mac-0.3.0-py3-none-any.whl; sys_platform == 'darwin' and platform_machine == 'arm64'",
+    "numpy>=2.0",
+    "soundfile>=0.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+maya2-studio = "maya2_studio:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
